@@ -4,8 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-@mixin flexCenter($content: center, $items: center) {
+@mixin flexCenter($content: center, $items: center, $direction: row) {
       display: flex;
       justify-content: $content;
       align-items: $items;
+      flex-direction: $direction;
 }
