@@ -2,10 +2,14 @@
 @import './vars';
 body {
     @include reset-body;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
     width: 100px;
     height: 100px;
-    border: 1px solid red;
+    border: 1px solid $color;
+    background: $color;
 }
