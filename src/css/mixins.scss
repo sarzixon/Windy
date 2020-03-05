@@ -1,5 +1,11 @@
-@mixin reset-body {
+@import './vars.scss';
+@mixin resetElements {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+@mixin flexCenter($content: center, $items: center) {
+      display: flex;
+      justify-content: $content;
+      align-items: $items;
 }
