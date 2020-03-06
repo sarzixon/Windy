@@ -10,3 +10,6 @@
       align-items: $items;
       flex-direction: $direction;
 }
+@mixin textShadow {
+    text-shadow: 3px 3px 8px rgba($color: #000000, $alpha: .3);
+}

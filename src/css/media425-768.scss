@@ -1,0 +1,15 @@
+@media all and (max-width:767px) {
+    .social {
+        aside {
+            h3 {
+                font-size: 16px;
+            }
+        }
+        .social__github {
+            img {
+                width: 80px !important;
+                height: auto;
+            }
+        }
+    }
+}

@@ -27,7 +27,7 @@ module.exports = {
           }
         }
       },
-       {
+      {
         test: /\.(s*)css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
@@ -35,10 +35,8 @@ module.exports = {
         })
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
-        use: [
-          'file-loader'
-         ]
+        test: /\.(jpe?g|png|gif|svg)$/,
+        loader: "file-loader"
       }
     ]
   }
