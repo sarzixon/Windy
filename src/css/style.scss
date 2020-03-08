@@ -1,6 +1,6 @@
 @import './mixins';
 @import './vars';
-@import './media425-768';
+
 *,
 ::before,
 ::after {
@@ -25,6 +25,9 @@ body {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
     box-shadow: inset 0px 0px $boxShadowRange 1px rgba($color: #000000, $alpha: .5);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    @include flexCenter;
 }
 
 // ************* SECTION APPP ********
@@ -135,15 +138,17 @@ body {
 
         h3 {
             padding-top: 15px;
-            font-size: 20px;
+            font-size: 18px;
         }
-
+        .social__github--container {
+            padding: 5px;
+        }
         &.social__github {
             @include flexCenter;
             // border-bottom: 1px solid black;
             position: relative;
             img {
-                width: 120px;
+                width: 80px;
                 height: auto;
             }
         }
@@ -152,9 +157,10 @@ body {
             @include flexCenter;
 
             img {
-                width: 225px;
+                width: 160px;
                 height: auto;
             }
         }
     }
 }
+@import './media425-768';
