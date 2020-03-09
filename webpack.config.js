@@ -2,6 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
+  devServer: {
+    host: '192.168.65.2', //your ip address
+    port: 8081,
+    disableHostCheck: true,
+  },
   entry: ["babel-polyfill", "./src/js/index.js"],
   output: {
     // path: path.resolve(__dirname, "dist"),
