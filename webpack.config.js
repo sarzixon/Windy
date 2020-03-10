@@ -40,8 +40,12 @@ module.exports = {
         })
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/,
-        loader: "file-loader"
+        test: /\.(jpe?g|png|gif|svg|ico)$/,
+        loader: "file-loader",
+        options: {
+          outputPath: 'images',
+          name: 'images/[path][name].[ext]'
+        }
       }
     ]
   }

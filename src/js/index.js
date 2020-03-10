@@ -1,3 +1,13 @@
+import '../img/Github-logo/PNG/GitHub-Mark-120px-plus.png';
+import '../img/Github-logo/PNG/GitHub-Mark-Light-32px.png';
+
+import '../img/LinkedIn-Logos/LI-In-Bug.png';
+import '../img/LinkedIn-Logos/LI-Logo.png';
+
+import '../img/favicon.ico';
+
+import '../img/249124-weather/png/lightning.png';
+
 import '../css/style.scss';
 import base from './base';
 import { apiCall } from './apiCall';
