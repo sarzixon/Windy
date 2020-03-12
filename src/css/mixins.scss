@@ -1,15 +1,47 @@
 @import './vars.scss';
+
 @mixin resetElements {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 @mixin flexCenter($content: center, $items: center, $direction: row) {
-      display: flex;
-      justify-content: $content;
-      align-items: $items;
-      flex-direction: $direction;
+    display: flex;
+    justify-content: $content;
+    align-items: $items;
+    flex-direction: $direction;
 }
+
 @mixin textShadow {
     text-shadow: 3px 3px 8px rgba($color: #000000, $alpha: .3);
+}
+
+@mixin rotateImg($deg: 360deg, $duration:2s) {
+    @keyframes rotateImg {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate($deg);
+        }
+    }
+    animation: rotateImg $duration infinite linear;
+}
+@mixin windFalling($value:20px, $duration: 1s) {
+    @keyframes wind {
+        0% {
+            transform: translateY(0);
+        }
+    
+        50% {
+            transform: translateY($value);
+        }
+    
+        100% {
+            transform: translateY(0);
+        }
+    }
+    animation: wind $duration infinite linear;
 }

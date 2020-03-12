@@ -39,6 +39,42 @@ body {
     .container {
         text-align: center;
 
+        .preloader {
+            margin: 30px 0 0 0;
+            width: 350px;
+            height: 350px;
+            @include flexCenter(center, flex-start);
+
+            .preloader__wind--left {
+                margin-right: 30px;
+                height: 100%;
+            }
+
+            .preloader__wind--right {
+                margin-left: 30px;
+                height: 100%;
+                @include flexCenter(center,flex-end);
+            }
+
+            .preloader__wind {
+                .preloader__wind--img {
+                    width: 40px;
+                    height: auto;
+                    @include windFalling;
+                }
+            }
+
+            .preloader__earth {
+                width: 350px;
+                height: auto;
+                @include rotateImg;
+            }
+        }
+
+        .preloader__sentence {
+            margin: 30px 0 0 0;
+        }
+
         .app__header {
             // @include flexCenter(center, flex-end, column);
             position: relative;
@@ -95,10 +131,15 @@ body {
                     color: #000;
                     outline: none;
                 }
+
                 #searchInput::placeholder {
                     color: #909090;
                 }
-                .underline { position: relative; }
+
+                .underline {
+                    position: relative;
+                }
+
                 .underline::after {
                     content: '';
                     display: block;
