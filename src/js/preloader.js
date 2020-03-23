@@ -1,4 +1,4 @@
-const loadPreloader = (parent,markup) => {
+const loadHTML = (parent,markup) => {
     parent.insertAdjacentHTML('afterbegin', markup);
 }
-export {loadPreloader};
+export default loadHTML;

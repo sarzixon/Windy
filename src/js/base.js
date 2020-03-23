@@ -6,8 +6,8 @@
      APIkey: '698237f90dda522cb515276920294914'
  };
 
- const clearDiv = div => {
-     div.innerHTML = '';
+ const clearDOM = (div, markup = '') => {
+     div.innerHTML = markup;
  }
 
  const preloaderMarkup = `
@@ -30,6 +30,6 @@
 
  export {
      base,
-     clearDiv,
+     clearDOM,
      preloaderMarkup
  };

@@ -11,30 +11,34 @@ import '../img/249124-weather/png/lightning.png';
 import '../css/style.scss';
 import {
     base,
-    clearDiv,
+    clearDOM,
     preloaderMarkup
 } from './base';
-import {
-    apiCall
-} from './apiCall';
-import { loadPreloader } from './preloader';
+import Search from './apiCall';
+import  loadHTML  from './preloader';
 
-
-windyApp = () => {
+let state = {};
+const windyApp = async () => {
     // 1. read value from input 
     const city = base.formInput.value;
-    console.log(city);
-    // 2. API CALL
-    //api.openweathermap.org/data/2.5/find?q=London&units=metric
-    apiCall(city);
-    // 3. loader
+    state.search = new Search(city);
+    // 2. loader
         //clear view
-        clearDiv(base.mainApp);
+        clearDOM(base.mainApp);
         // Insert html
-        loadPreloader(base.mainApp, preloaderMarkup);
-    // 4. proccess data
+        loadHTML(base.mainApp, preloaderMarkup);
+        try {
+        // 2. API CALL
+            await state.search.apiCall();
+            console.log(state);
+            // 4. proccess data
+            clearDOM(base.mainApp);
 
-    // 5. display data
+            
+            // 5. display data
+        } catch(err) {
+            console.log(err)
+        }
 };
 
 base.formBtn.addEventListener('click', e => {

@@ -1,3 +1,19 @@
+@media all and (max-width: 1024px) {
+    .app .container .preloader .preloader__earth {
+        width: 300px;
+        height: auto;
+    }
+    .app .container .preloader .preloader__wind--left {
+        margin-right: 15px;
+    }
+    .app .container .preloader .preloader__wind--right {
+        margin-left: 15px;
+    }
+    .app .container .preloader .preloader__wind .preloader__wind--img {
+       width:35px; 
+    }
+}
+
 @media all and (max-width:767px) {
     body .ads {
         grid-column: 3 / 4;
@@ -27,6 +43,11 @@
 
     .social aside.social__github #gitImg {
         width: 60px;
+        height: auto;
+    }
+
+    .app .container .preloader .preloader__earth {
+        width: 250px;
         height: auto;
     }
 }
@@ -89,6 +110,22 @@
             }
         }
     }
+        .app .container .preloader .preloader__earth {
+            width: 250px;
+            height: auto;
+        }
+
+        .app .container .preloader .preloader__wind--left {
+            margin-right: 10px;
+        }
+
+        .app .container .preloader .preloader__wind--right {
+            margin-left: 10px;
+        }
+
+        .app .container .preloader .preloader__wind .preloader__wind--img {
+            width: 30px;
+        }
 }
 
 @media all and (max-width:426px) {
@@ -137,4 +174,23 @@
         width: 30px;
         height: auto;
     }
+    .social aside.social__linkedin {
+        margin-right: 40px;
+    }
+        .app .container .preloader .preloader__earth {
+            width: 230px;
+            height: auto;
+        }
+
+        .app .container .preloader .preloader__wind--left {
+            margin-right: 5px;
+        }
+
+        .app .container .preloader .preloader__wind--right {
+            margin-left: 5px;
+        }
+
+        .app .container .preloader .preloader__wind .preloader__wind--img {
+            width: 25px;
+        }
 }
