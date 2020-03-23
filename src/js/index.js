@@ -16,12 +16,14 @@ import {
 } from './base';
 import Search from './apiCall';
 import  loadHTML  from './preloader';
+import processResponse from './response';
 
 let state = {};
 const windyApp = async () => {
     // 1. read value from input 
-    const city = base.formInput.value;
-    state.search = new Search(city);
+    state.city = base.formInput.value;
+    state.city = 'Warsaw';
+    state.search = new Search(state.city);
     // 2. loader
         //clear view
         clearDOM(base.mainApp);
@@ -30,8 +32,12 @@ const windyApp = async () => {
         try {
         // 2. API CALL
             await state.search.apiCall();
-            console.log(state);
+            // console.log(state.search.response.data);
             // 4. proccess data
+            state.response = new processResponse(state.search.response.data);
+            state.response.weatherArrayPerSixHours();
+            state.response.createSnapshots(); // Create object for every snapshot
+            console.log(state.response);
             clearDOM(base.mainApp);
 
             
@@ -40,6 +46,7 @@ const windyApp = async () => {
             console.log(err)
         }
 };
+windyApp();
 
 base.formBtn.addEventListener('click', e => {
     e.preventDefault();
