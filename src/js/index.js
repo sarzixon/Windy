@@ -46,13 +46,13 @@ const windyApp = async () => {
             console.log(err)
         }
 };
-windyApp();
+// windyApp();
 
-base.formBtn.addEventListener('click', e => {
-    e.preventDefault();
-    windyApp();
-});
-base.form.addEventListener('subimt', e => {
-    e.preventDefault();
-    windyApp();
-});
+// base.formBtn.addEventListener('click', e => {
+//     e.preventDefault();
+//     windyApp();
+// });
+// base.form.addEventListener('subimt', e => {
+//     e.preventDefault();
+//     windyApp();
+// });

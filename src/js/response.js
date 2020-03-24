@@ -15,8 +15,11 @@ export default class processResponse {
         this.Snapshots = [];
         this.weatherPer12Hours.forEach(el => {
             const snap = {};
-            snap.temp = el.main.temp;
-            snap.feelsLike = el.main.feels_like;
+            snap.city = this.city;
+            snap.date = el.dt_txt.split(' ')[0];
+            snap.time = el.dt_txt.split(' ')[1];
+            snap.temp = el.main.temp.toFixed(1);
+            snap.feelsLike = el.main.feels_like.toFixed(1);
             snap.pressure = el.main.pressure;
             snap.wind = el.wind.speed;
             snap.imgID = el.weather[0].id;
