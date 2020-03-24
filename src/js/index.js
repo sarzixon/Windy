@@ -4,6 +4,9 @@ import '../img/Github-logo/PNG/GitHub-Mark-Light-32px.png';
 import '../img/LinkedIn-Logos/LI-In-Bug.png';
 import '../img/LinkedIn-Logos/LI-Logo.png';
 
+import '../img/249124-weather/Group 13.png';
+import '../img/249124-weather/Group 15.png';
+import '../img/249124-weather/png/rain-1.png';
 import '../img/favicon.ico';
 
 import '../img/249124-weather/png/lightning.png';
