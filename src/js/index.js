@@ -17,6 +17,7 @@ import {
 import Search from './apiCall';
 import  loadHTML  from './preloader';
 import processResponse from './response';
+import glide from './slider';
 
 let state = {};
 const windyApp = async () => {
