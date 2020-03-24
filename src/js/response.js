@@ -1,3 +1,7 @@
+import {
+    base, loadHTML
+} from './base';
+
 export default class processResponse {
     constructor(res) {
         this.city = res.city.name;
@@ -7,8 +11,8 @@ export default class processResponse {
     }
     weatherArrayPerSixHours() {
         this.weatherPer12Hours = [];
-        for (let i = 0; i < this.weatherArray.length; i+=4) {
-            this.weatherPer12Hours.push(this.weatherArray[i]);  
+        for (let i = 0; i < this.weatherArray.length; i += 4) {
+            this.weatherPer12Hours.push(this.weatherArray[i]);
         }
     }
     createSnapshots() {
@@ -26,5 +30,35 @@ export default class processResponse {
             snap.description = el.weather[0].description;
             this.Snapshots.push(snap);
         });
+    }
+    displaySnapshot() {
+        this.Snapshots.forEach(el => {
+            const snapshotMarkup = `
+                            <li class="glide__slide">
+                                <div class="weatherView">
+                                    <div class="weatherView__date" id="weatherDate">${el.date}</div>
+                                    <div class="weatherView__hour" id="weatherHour">${el.time}</div>
+                                    <div class="weatherView__img"><img class="weatherView__img--img" id="weatherImg"
+                                            src="../src/img/249124-weather/png/rain-1.png" alt="${el.imgID}"></div>
+                                    <div class="weatherView__temp">
+                                        <div class="temp underline" id="temp">${el.temp}&deg</div>
+                                        <div class="feelsLike underline weatherView__div--align">
+                                            <div>feels like:</div>
+                                            <div id="feelsLike">${el.feelsLike}&deg</div>
+                                        </div>
+                                        <div class="weatherView__wind underline weatherView__div--align">
+                                            <div>wind:</div>
+                                            <div id="wind">${el.wind} m/s</div>
+                                        </div>
+                                        <div class="weatherView__pressure underline weatherView__div--align">
+                                            <div>pressure</div>
+                                            <div id="pressure">${el.pressure} Hpa</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>`;
+                    loadHTML(document.querySelector('.glide__slides'), snapshotMarkup, 'beforeend');
+        });
+
     }
 }

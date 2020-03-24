@@ -6,4 +6,4 @@ export default new Glide('.glide', {
     startAt: 0,
     perView: 1,
     focusAt: 'center'
-}).mount();
+});

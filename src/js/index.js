@@ -12,10 +12,11 @@ import '../css/style.scss';
 import {
     base,
     clearDOM,
-    preloaderMarkup
+    preloaderMarkup,
+    loadHTML,
+    weatherMarkup
 } from './base';
 import Search from './apiCall';
-import  loadHTML  from './preloader';
 import processResponse from './response';
 import glide from './slider';
 
@@ -23,7 +24,6 @@ let state = {};
 const windyApp = async () => {
     // 1. read value from input 
     state.city = base.formInput.value;
-    state.city = 'Warsaw';
     state.search = new Search(state.city);
     // 2. loader
         //clear view
@@ -40,20 +40,20 @@ const windyApp = async () => {
             state.response.createSnapshots(); // Create object for every snapshot
             console.log(state.response);
             clearDOM(base.mainApp);
-
-            
             // 5. display data
+            loadHTML(base.mainApp, weatherMarkup);
+            state.response.displaySnapshot();
+            glide.mount();
         } catch(err) {
             console.log(err)
         }
 };
-// windyApp();
 
-// base.formBtn.addEventListener('click', e => {
-//     e.preventDefault();
-//     windyApp();
-// });
-// base.form.addEventListener('subimt', e => {
-//     e.preventDefault();
-//     windyApp();
-// });
+base.formBtn.addEventListener('click', e => {
+    e.preventDefault();
+    windyApp();
+});
+base.form.addEventListener('subimt', e => {
+    e.preventDefault();
+    windyApp();
+});
