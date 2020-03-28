@@ -36,7 +36,7 @@
                 <img class="weather__result--align" src="../src/img/249124-weather/png/lightning.png" alt="lightning">
                 <h1>WINDY !</h1>
             </header>
-            <h2 class="city__header">Weather in <span>Warsaw</span> </h2>
+            <h2 class="city__header">Weather in <span class="CityResponse">Warsaw</span> </h2>
             <div class="slider">
                 <div class="glide">
                     <div class="glide__track" data-glide-el="track">

@@ -46,6 +46,7 @@ const windyApp = async () => {
             // 5. display data
             loadHTML(base.mainApp, weatherMarkup);
             state.response.displaySnapshot();
+            document.querySelector('.CityResponse').innerHTML = state.response.city;
             glide.mount();
         } catch(err) {
             console.log(err)

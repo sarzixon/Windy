@@ -155,7 +155,13 @@
             }
         }
     }
-
+    .app .slider {
+        width: 450px;
+    }
+    .app .slider .weatherView {
+        width: 250px;
+        height: 340px;
+    }
     .social__container {
         border: 1px solid black;
         border-radius: 20% 20% 0 0;
